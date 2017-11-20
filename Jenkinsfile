@@ -20,7 +20,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh "mvn deploy -DskipTests -Dartifactory_url=artifactory"
+                sh "mvn deploy -DskipTests -Dartifactory_url=${env.ARTIFACTORY_URL}"
             }
         }
     }
