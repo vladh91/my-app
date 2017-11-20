@@ -12,7 +12,7 @@
         <snapshotRepository>
             <id>artifactory</id>
             <name>artifactory</name>
-            <url>http://artifactory:32776/</url>
+            <url>http://10.1.5.232:32778/artifactory/example-repo-local/</url>
         </snapshotRepository>
   </distributionManagement>
 	
