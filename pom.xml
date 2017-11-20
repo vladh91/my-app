@@ -12,7 +12,7 @@
         <snapshotRepository>
             <id>artifactory</id>
             <name>artifactory</name>
-            <url>http://artifactory:8081/</url>
+            <url>http://artifactory:32776/</url>
         </snapshotRepository>
   </distributionManagement>
 	
