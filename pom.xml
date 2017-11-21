@@ -17,6 +17,8 @@
   </distributionManagement>
   <properties>
       <!-- This property will be set by the Maven Dependency plugin -->
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
+      <sonar.host.url>http://sonar:9000</sonar.host.url>
       <annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
   </properties>
 
