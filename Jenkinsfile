@@ -26,7 +26,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                configFileProvider([configFile(fileId: 'our_settings', variable: 'SETTINGS')]) {
+                configFileProvider([configFile(fileId: 'maven_settings', variable: 'SETTINGS')]) {
                 sh "mvn -s $SETTINGS deploy -DskipTests"
                }
            }
