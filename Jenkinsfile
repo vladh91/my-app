@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('Install and Sonar parallel') {
+        stage('Install') {
             steps {
                
                         install: {
@@ -29,4 +29,3 @@ pipeline {
             }
         }
     }
-}
