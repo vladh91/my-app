@@ -8,9 +8,15 @@ pipeline {
 
     stages {
         stage('Install') {
-            steps {                              
-                            sh "mvn -U clean test"
-                 }
+            steps {        
+                parallel(
+                    install:{
+                        sh "mvn -U clean test" },
+                    sonar: {
+                        sh "mvn sonar:sonar"
+                    }
+                  )
+                    }
             post {
                 always {
                     junit '**/target/*-reports/TEST-*.xml'
