@@ -13,7 +13,7 @@ pipeline {
                         install: {
                             sh "mvn -U clean test"
                         }
-                )
+            }
 }
             post {
                 always {
