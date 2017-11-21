@@ -20,8 +20,8 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                configFileProvider([configFile(fileId: 'our_settings', variable: 'settings')])
-                sh "mvn deploy -DskipTests"
+                configFileProvider([configFile(fileId: 'our_settings', variable: 'SETTINGS')])
+                sh "mvn -s $SETTINGS deploy -DskipTests"
             }
         }
     }
