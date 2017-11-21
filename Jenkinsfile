@@ -9,12 +9,9 @@ pipeline {
     stages {
         stage('Install and Sonar parallel') {
             steps {
-                parallel(
+               
                         install: {
                             sh "mvn -U clean test"
-                        },
-                        sonar: {
-                            sh "mvn sonar:sonar"
                         }
                 )
 }
