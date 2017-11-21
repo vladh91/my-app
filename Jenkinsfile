@@ -11,7 +11,6 @@ pipeline {
             steps {                              
                             sh "mvn -U clean test"
                  }
-                        }
             post {
                 always {
                     junit '**/target/*-reports/TEST-*.xml'
