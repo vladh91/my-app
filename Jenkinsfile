@@ -7,10 +7,17 @@ pipeline {
     }
 
     stages {
-        stage('Install') {
+        stage('Install and Sonar parallel') {
             steps {
-                      sh "mvn -U clean test"
-                  }
+                parallel(
+                        install: {
+                            sh "mvn -U clean test"
+                        },
+                        sonar: {
+                            sh "mvn sonar:sonar"
+                        }
+                )
+}
             post {
                 always {
                     junit '**/target/*-reports/TEST-*.xml'
@@ -20,6 +27,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
+                configFileProvider([configFile(fileId: 'our_settings',variable: 'SETTINGS')])
                 sh "mvn deploy -DskipTests"
             }
         }
